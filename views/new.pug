@@ -1,14 +1,14 @@
 extends layout
 
 block content
-  form(method="post", action="/schedules")
-    div
-      h5 予定名(255文字まで)
-      input(type="text" name="scheduleName" maxlength="255")
-    div
-      h5 メモ(1000文字まで)
-      textarea(name="memo" maxlength="1000")
-    div
-      h5 候補日程 (改行して複数入力してください)
-      textarea(name="candidates")
-    button(type="submit") 予定をつくる
+  form(method="post", action="/schedules").my-3
+    div.form-group
+      label(for="scheduleName") 予定名(255文字まで)
+      input(type="text" name="scheduleName" maxlength="255")#scheduleName.form-control
+    div.form-group
+      label(for="memo") メモ(1000文字まで)
+      textarea(name="memo" maxlength="1000")#memo.form-control
+    div.form-group
+      label(for="candidates") 候補日程 (改行して複数入力してください)
+      textarea(name="candidates")#candidates.form-control
+    button(type="submit").btn.btn-info 予定をつくる
